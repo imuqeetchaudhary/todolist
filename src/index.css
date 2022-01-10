@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +10,11 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+
+html {
+  background-color: #E4E9FD;
+  background-image: -webkit-linear-gradient(64.25deg, #A683E3 50%, #E4E9FD 50%);
+  min-height: 619px;
+  font-family: 'helvetica neue';
 }
