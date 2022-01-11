@@ -1,7 +1,7 @@
 html {
   background-color: #E4E9FD;
-  background-image: -webkit-linear-gradient(65deg, #A683E3 50%, #E4E9FD 50%);
-  min-height: 1000px;
+  background-image: -webkit-linear-gradient(65deg, #A683E3 40%, #E4E9FD 40%);
+  min-height: 619px;
   font-family: 'helvetica neue';
 }
 
@@ -28,6 +28,10 @@ h1 {
   min-height: 70px;
   align-items: center;
   border-bottom: 1px solid #f1f1f1;
+}
+
+.item p {
+  flex-grow: 1;
 }
 
 p {
@@ -83,4 +87,17 @@ input[type="text"]:focus {
   font-size: 30px;
   padding-bottom: 6px;
   border-width: 0;
+}
+
+.edit {
+  background-color: #A683E3;
+  border-color: transparent;
+  width: 50px;
+  min-height: 20px;
+  border-radius: 7%;
+  color: #fff;
+  font-size: 14px;
+  align-content: right;
+  right: 0;
+  margin-right: 15px;
 }

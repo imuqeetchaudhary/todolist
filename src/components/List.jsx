@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "./Button";
 
 const List = ({ todos, handleDeleteClick }) => {
   return (
@@ -7,6 +8,7 @@ const List = ({ todos, handleDeleteClick }) => {
         <div className="item" key={todo.id}>
           <input id={todo.id} onClick={handleDeleteClick} type="checkbox" />
           <p>{todo.title}</p>
+          <Button className={"edit"}>Edit</Button>
         </div>
       ))}
     </div>
