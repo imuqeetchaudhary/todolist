@@ -2,11 +2,11 @@ import React from "react";
 import Button from "./Button";
 import Input from "./Input";
 
-const Form = ({ newTodo, handleSubmit, handleChange }) => {
+const Form = ({ handleSubmit, handleChange }) => {
   return (
     <form className="item" onSubmit={handleSubmit}>
-      <Input newTodo={newTodo} handleChange={handleChange} />
-      <Button className={"add-item"} >+</Button>
+      <Input handleChange={handleChange} />
+      <Button className={"add-item"}>+</Button>
     </form>
   );
 };

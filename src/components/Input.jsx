@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { NewTodosContext } from "../App";
 
-const Input = ({ newTodo, handleChange }) => {
+const Input = ({ handleChange }) => {
+  const newTodo = useContext(NewTodosContext);
+
   return (
     <input
       type="text"

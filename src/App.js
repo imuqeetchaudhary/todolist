@@ -2,6 +2,13 @@ import "./App.css";
 import React, { useState } from "react";
 import ToDoBox from "./components/ToDoBox";
 
+// Contexts
+
+export const TodosContext = React.createContext();
+export const NewTodosContext = React.createContext();
+export const IsOpenContext = React.createContext();
+export const TodoIdContext = React.createContext();
+
 function App() {
   const todosArray = [
     {
@@ -18,11 +25,15 @@ function App() {
     },
   ];
 
+  // States
+
   const [todos, setTodos] = useState(todosArray);
   const [newTodo, setNewTodo] = useState({ id: null, title: "" });
   const [isOpen, setIsOpen] = useState(false);
   const [todoId, setTodoId] = useState(null);
   const [editTodo, setEditTodo] = useState({ id: null, title: "" });
+
+  // Handler Functions
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -66,17 +77,25 @@ function App() {
 
   return (
     <div className="App">
-      <ToDoBox
-        todos={todos}
-        newTodo={newTodo}
-        handleChange={handleChange}
-        handleSubmit={handleSubmit}
-        handleDeleteClick={handleDeleteClick}
-        handleEditClick={handleEditClick}
-        togglePopup={togglePopup}
-        isOpen={isOpen}
-        handleEditChange={handleEditChange}
-      />
+      <TodosContext.Provider value={todos}>
+        <NewTodosContext.Provider value={newTodo}>
+          <IsOpenContext.Provider value={isOpen}>
+            <TodoIdContext.Provider value={todoId}>
+              <ToDoBox
+                todos={todos}
+                newTodo={newTodo}
+                isOpen={isOpen}
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+                handleDeleteClick={handleDeleteClick}
+                handleEditClick={handleEditClick}
+                togglePopup={togglePopup}
+                handleEditChange={handleEditChange}
+              />
+            </TodoIdContext.Provider>
+          </IsOpenContext.Provider>
+        </NewTodosContext.Provider>
+      </TodosContext.Provider>
     </div>
   );
 }

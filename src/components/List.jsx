@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+import { IsOpenContext, TodosContext } from "../App";
 import TogglePopup from "./TogglePopup";
 
 const List = ({
-  todos,
   handleDeleteClick,
   handleEditClick,
   togglePopup,
-  isOpen,
   handleEditChange,
 }) => {
+  const todos = useContext(TodosContext);
+  const isOpen = useContext(IsOpenContext);
+
   return (
     <div>
       {todos.map((todo) => (
