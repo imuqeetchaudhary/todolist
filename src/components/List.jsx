@@ -1,6 +1,12 @@
 import React from "react";
 
-const List = ({ newTodo, todos, handleChange, handleSubmit }) => {
+const List = ({
+  newTodo,
+  todos,
+  handleChange,
+  handleSubmit,
+  handleDeleteClick,
+}) => {
   return (
     <div>
       <div className="box" id="heading">
@@ -10,7 +16,7 @@ const List = ({ newTodo, todos, handleChange, handleSubmit }) => {
       <div className="box">
         {todos.map((todo) => (
           <div className="item" key={todo.id}>
-            <input type="checkbox" />
+            <input id={todo.id} onClick={handleDeleteClick} type="checkbox" />
             <p>{todo.title}</p>
           </div>
         ))}

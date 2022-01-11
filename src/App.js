@@ -31,6 +31,14 @@ function App() {
     setNewTodo({ id: todos.length + 1, title: e.target.value });
   };
 
+  const handleDeleteClick = (e) => {
+    setTodos(
+      todos.filter((todo) => {
+        return todo.id !== +e.target.id;
+      })
+    );
+  };
+
   return (
     <div className="App">
       <List
@@ -38,6 +46,7 @@ function App() {
         newTodo={newTodo}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
+        handleDeleteClick={handleDeleteClick}
       />
     </div>
   );
