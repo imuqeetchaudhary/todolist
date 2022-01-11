@@ -1,5 +1,7 @@
 import React from "react";
 import Form from "./Form";
+import Heading from "./Heading";
+import List from "./List";
 
 const ToDoBox = ({
   newTodo,
@@ -10,17 +12,10 @@ const ToDoBox = ({
 }) => {
   return (
     <div>
-      <div className="box" id="heading">
-        <h1>To Do List Items</h1>
-      </div>
+      <Heading />
 
       <div className="box">
-        {todos.map((todo) => (
-          <div className="item" key={todo.id}>
-            <input id={todo.id} onClick={handleDeleteClick} type="checkbox" />
-            <p>{todo.title}</p>
-          </div>
-        ))}
+        <List todos={todos} handleDeleteClick={handleDeleteClick} />
 
         <Form
           newTodo={newTodo}
