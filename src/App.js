@@ -28,7 +28,7 @@ function App() {
   };
 
   const handleChange = (e) => {
-    setNewTodo({ id: todos.length + 1, title: e.target.value });
+    setNewTodo({ id: Date.now(), title: e.target.value });
   };
 
   const handleDeleteClick = (e) => {
