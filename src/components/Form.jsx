@@ -6,7 +6,7 @@ const Form = ({ newTodo, handleSubmit, handleChange }) => {
   return (
     <form className="item" onSubmit={handleSubmit}>
       <Input newTodo={newTodo} handleChange={handleChange} />
-      <Button />
+      <Button>+</Button>
     </form>
   );
 };
