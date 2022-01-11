@@ -82,9 +82,6 @@ function App() {
           <IsOpenContext.Provider value={isOpen}>
             <TodoIdContext.Provider value={todoId}>
               <ToDoBox
-                todos={todos}
-                newTodo={newTodo}
-                isOpen={isOpen}
                 handleChange={handleChange}
                 handleSubmit={handleSubmit}
                 handleDeleteClick={handleDeleteClick}
