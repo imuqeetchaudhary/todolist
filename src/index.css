@@ -101,3 +101,43 @@ input[type="text"]:focus {
   right: 0;
   margin-right: 15px;
 }
+
+/* Popup style */
+.popup-box {
+  position: fixed;
+  background: #00000050;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.pop-box {
+  position: relative;
+  width: 50%;
+  margin: 0 auto;
+  max-height: 10vh;
+  margin-top: calc(100vh - 65vh - 0px);
+  background: #fff;
+  border-radius: 4px;
+  padding: 40px;
+  text-align: center;
+  border: 1px solid #999;
+  overflow: auto;
+}
+
+.close-icon {
+  content: 'x';
+  cursor: pointer;
+  position: fixed;
+  right: calc(15% - -40px);
+  top: calc(100vh - 62vh - 33px);
+  background: #ededed;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  line-height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+  font-size: 20px;
+}
