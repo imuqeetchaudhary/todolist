@@ -1,9 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef, useEffect } from "react";
 import { HandleChangeContext, NewTodosContext } from "./Context";
 
 const Input = () => {
   const newTodo = useContext(NewTodosContext);
   const handleChange = useContext(HandleChangeContext);
+
+  const inputRef = useRef();
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
 
   return (
     <input
@@ -12,6 +18,7 @@ const Input = () => {
       placeholder="New Todo Item"
       autoComplete="off"
       onChange={handleChange}
+      ref={inputRef}
     />
   );
 };
