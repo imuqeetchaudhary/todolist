@@ -73,7 +73,7 @@ input[type="text"]:focus {
   opacity: 1;
 }
 
-button {
+.add-item {
   background-color: #A683E3;
   border-color: transparent;
   width: 50px;

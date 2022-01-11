@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Button = ({children}) => {
-    return <button type="submit">{children}</button>;
+const Button = ({className, children}) => {
+    return <button className={className} type="submit">{children}</button>;
 }
 
 export default Button
