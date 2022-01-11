@@ -1,4 +1,5 @@
 import React from "react";
+import Form from "./Form";
 
 const List = ({
   newTodo,
@@ -21,16 +22,11 @@ const List = ({
           </div>
         ))}
 
-        <form className="item" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            value={newTodo.title}
-            placeholder="New Todo Item"
-            autoComplete="off"
-            onChange={handleChange}
-          />
-          <button type="submit">+</button>
-        </form>
+        <Form
+          newTodo={newTodo}
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}
+        />
       </div>
     </div>
   );
