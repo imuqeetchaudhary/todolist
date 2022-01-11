@@ -1,7 +1,7 @@
 import React from "react";
 import Form from "./Form";
 
-const List = ({
+const ToDoBox = ({
   newTodo,
   todos,
   handleChange,
@@ -32,4 +32,4 @@ const List = ({
   );
 };
 
-export default List;
+export default ToDoBox;

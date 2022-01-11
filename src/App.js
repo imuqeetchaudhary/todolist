@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useState } from "react";
-import List from "./components/List";
+import ToDoBox from "./components/ToDoBox";
 
 function App() {
   const todosArray = [
@@ -41,7 +41,7 @@ function App() {
 
   return (
     <div className="App">
-      <List
+      <ToDoBox
         todos={todos}
         newTodo={newTodo}
         handleChange={handleChange}
