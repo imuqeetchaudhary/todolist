@@ -2,12 +2,21 @@ import "./App.css";
 import React, { useState } from "react";
 import ToDoBox from "./components/ToDoBox";
 
-// Contexts
+// Contexts For States
 
 export const TodosContext = React.createContext();
 export const NewTodosContext = React.createContext();
 export const IsOpenContext = React.createContext();
 export const TodoIdContext = React.createContext();
+
+// Context For Handlers
+
+export const HandleChangeContext = React.createContext();
+export const HandleSubmitContext = React.createContext();
+export const HandleDeleteClickContext = React.createContext();
+export const HandleEditClickContext = React.createContext();
+export const HandleEditChangeContext = React.createContext();
+export const TogglePopupContext = React.createContext();
 
 function App() {
   const todosArray = [
@@ -81,14 +90,21 @@ function App() {
         <NewTodosContext.Provider value={newTodo}>
           <IsOpenContext.Provider value={isOpen}>
             <TodoIdContext.Provider value={todoId}>
-              <ToDoBox
-                handleChange={handleChange}
-                handleSubmit={handleSubmit}
-                handleDeleteClick={handleDeleteClick}
-                handleEditClick={handleEditClick}
-                togglePopup={togglePopup}
-                handleEditChange={handleEditChange}
-              />
+              <HandleChangeContext.Provider value={handleChange}>
+                <HandleSubmitContext.Provider value={handleSubmit}>
+                  <HandleDeleteClickContext.Provider value={handleDeleteClick}>
+                    <HandleEditClickContext.Provider value={handleEditClick}>
+                      <TogglePopupContext.Provider value={togglePopup}>
+                        <HandleEditChangeContext.Provider
+                          value={handleEditChange}
+                        >
+                          <ToDoBox />
+                        </HandleEditChangeContext.Provider>
+                      </TogglePopupContext.Provider>
+                    </HandleEditClickContext.Provider>
+                  </HandleDeleteClickContext.Provider>
+                </HandleSubmitContext.Provider>
+              </HandleChangeContext.Provider>
             </TodoIdContext.Provider>
           </IsOpenContext.Provider>
         </NewTodosContext.Provider>

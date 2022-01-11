@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import { HandleChangeContext, HandleSubmitContext } from "../App";
 import Button from "./Button";
 import Input from "./Input";
 
-const Form = ({ handleSubmit, handleChange }) => {
+const Form = () => {
+  const handleChange = useContext(HandleChangeContext);
+  const handleSubmit = useContext(HandleSubmitContext);
+
   return (
     <form className="item" onSubmit={handleSubmit}>
       <Input handleChange={handleChange} />

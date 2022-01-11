@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { TogglePopupContext } from "../App";
 
-const Popup = ({ children, handleClose }) => {
+const Popup = ({ children }) => {
+  const togglePopup = useContext(TogglePopupContext);
+
   return (
     <div className="popup-box">
       <div className="pop-box">
-        <span className="close-icon" onClick={handleClose}>
+        <span className="close-icon" onClick={togglePopup}>
           x
         </span>
         {children}

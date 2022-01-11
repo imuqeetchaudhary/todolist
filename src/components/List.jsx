@@ -1,15 +1,17 @@
 import React, { useContext } from "react";
-import { IsOpenContext, TodosContext } from "../App";
+import {
+  HandleDeleteClickContext,
+  IsOpenContext,
+  TodosContext,
+  TogglePopupContext,
+} from "../App";
 import TogglePopup from "./TogglePopup";
 
-const List = ({
-  handleDeleteClick,
-  handleEditClick,
-  togglePopup,
-  handleEditChange,
-}) => {
+const List = () => {
   const todos = useContext(TodosContext);
   const isOpen = useContext(IsOpenContext);
+  const handleDeleteClick = useContext(HandleDeleteClickContext);
+  const togglePopup = useContext(TogglePopupContext);
 
   return (
     <div>
@@ -22,13 +24,7 @@ const List = ({
           </button>
         </div>
       ))}
-      {isOpen && (
-        <TogglePopup
-          togglePopup={togglePopup}
-          handleEditClick={handleEditClick}
-          handleEditChange={handleEditChange}
-        />
-      )}
+      {isOpen && <TogglePopup />}
     </div>
   );
 };

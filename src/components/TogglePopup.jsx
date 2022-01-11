@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+import { HandleEditClickContext, HandleEditChangeContext } from "../App";
 import Popup from "./Popup";
 
-const TogglePopup = ({ togglePopup, handleEditClick, handleEditChange }) => {
+const TogglePopup = () => {
+  const handleEditClick = useContext(HandleEditClickContext);
+  const handleEditChange = useContext(HandleEditChangeContext);
+
   return (
     <div>
-      <Popup handleClose={togglePopup}>
+      <Popup>
         <form onSubmit={handleEditClick}>
           <input
             type="text"

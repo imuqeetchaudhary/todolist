@@ -3,27 +3,15 @@ import Form from "./Form";
 import Heading from "./Heading";
 import List from "./List";
 
-const ToDoBox = ({
-  handleChange,
-  handleSubmit,
-  handleDeleteClick,
-  handleEditClick,
-  togglePopup,
-  handleEditChange,
-}) => {
+const ToDoBox = () => {
   return (
     <div>
       <Heading />
 
       <div className="box">
-        <List
-          handleDeleteClick={handleDeleteClick}
-          handleEditClick={handleEditClick}
-          togglePopup={togglePopup}
-          handleEditChange={handleEditChange}
-        />
+        <List />
 
-        <Form handleChange={handleChange} handleSubmit={handleSubmit} />
+        <Form />
       </div>
     </div>
   );
