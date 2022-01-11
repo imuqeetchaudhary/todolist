@@ -20,6 +20,9 @@ function App() {
 
   const [todos, setTodos] = useState(todosArray);
   const [newTodo, setNewTodo] = useState({ id: null, title: "" });
+  const [isOpen, setIsOpen] = useState(false);
+  const [todoId, setTodoId] = useState(null);
+  const [editTodo, setEditTodo] = useState({ id: null, title: "" });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -39,6 +42,28 @@ function App() {
     );
   };
 
+  const togglePopup = (e) => {
+    setIsOpen(!isOpen);
+    setTodoId(+e.target.parentNode.firstChild.id);
+  };
+
+  const handleEditClick = (e) => {
+    const newArray = todos;
+
+    newArray.forEach((todo) => {
+      if (todo.id === todoId) {
+        todo.title = editTodo.title;
+      }
+    });
+
+    setTodos(newArray);
+    setIsOpen(!isOpen);
+  };
+
+  const handleEditChange = (e) => {
+    setEditTodo({ id: todoId, title: e.target.value });
+  };
+
   return (
     <div className="App">
       <ToDoBox
@@ -47,6 +72,10 @@ function App() {
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         handleDeleteClick={handleDeleteClick}
+        handleEditClick={handleEditClick}
+        togglePopup={togglePopup}
+        isOpen={isOpen}
+        handleEditChange={handleEditChange}
       />
     </div>
   );

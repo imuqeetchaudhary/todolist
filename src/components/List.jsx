@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import TogglePopup from "./TogglePopup";
 
-const List = ({ todos, handleDeleteClick }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const togglePopup = () => {
-    setIsOpen(!isOpen);
-  };
-
+const List = ({
+  todos,
+  handleDeleteClick,
+  handleEditClick,
+  togglePopup,
+  isOpen,
+  handleEditChange,
+}) => {
   return (
     <div>
       {todos.map((todo) => (
@@ -19,7 +20,13 @@ const List = ({ todos, handleDeleteClick }) => {
           </button>
         </div>
       ))}
-      {isOpen && <TogglePopup togglePopup={togglePopup} />}
+      {isOpen && (
+        <TogglePopup
+          togglePopup={togglePopup}
+          handleEditClick={handleEditClick}
+          handleEditChange={handleEditChange}
+        />
+      )}
     </div>
   );
 };

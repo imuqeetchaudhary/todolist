@@ -9,13 +9,24 @@ const ToDoBox = ({
   handleChange,
   handleSubmit,
   handleDeleteClick,
+  handleEditClick,
+  togglePopup,
+  isOpen,
+  handleEditChange,
 }) => {
   return (
     <div>
       <Heading />
 
       <div className="box">
-        <List todos={todos} handleDeleteClick={handleDeleteClick} />
+        <List
+          todos={todos}
+          handleDeleteClick={handleDeleteClick}
+          handleEditClick={handleEditClick}
+          togglePopup={togglePopup}
+          isOpen={isOpen}
+          handleEditChange={handleEditChange}
+        />
 
         <Form
           newTodo={newTodo}

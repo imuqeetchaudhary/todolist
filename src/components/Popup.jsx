@@ -1,16 +1,14 @@
 import React from "react";
 
-const Popup = (props) => {
-
+const Popup = ({ children, handleClose }) => {
   return (
     <div className="popup-box">
       <div className="pop-box">
-        <span className="close-icon" onClick={props.handleClose}>
+        <span className="close-icon" onClick={handleClose}>
           x
         </span>
-        {props.content}
+        {children}
       </div>
-     
     </div>
   );
 };
