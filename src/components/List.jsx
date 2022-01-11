@@ -1,34 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-const List = () => {
-  const todosArray = [
-    {
-      id: 1,
-      title: "ToDo 1",
-    },
-    {
-      id: 2,
-      title: "ToDo 2",
-    },
-    {
-      id: 3,
-      title: "ToDo 3",
-    },
-  ];
-
-  const [todos, setTodos] = useState(todosArray);
-  const [newTodo, setNewTodo] = useState({ id: null, title: "" });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setTodos([...todos, newTodo]);
-    setNewTodo({ id: null, title: "" });
-  };
-
-  const handleChange = (e) => {
-    setNewTodo({ id: todos.length + 1, title: e.target.value });
-  };
-
+const List = ({ newTodo, todos, handleChange, handleSubmit }) => {
   return (
     <div>
       <div className="box" id="heading">
