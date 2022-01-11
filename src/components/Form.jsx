@@ -1,16 +1,12 @@
 import React from "react";
+import Button from "./Button";
+import Input from "./Input";
 
 const Form = ({ newTodo, handleSubmit, handleChange }) => {
   return (
     <form className="item" onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={newTodo.title}
-        placeholder="New Todo Item"
-        autoComplete="off"
-        onChange={handleChange}
-      />
-      <button type="submit">+</button>
+      <Input newTodo={newTodo} handleChange={handleChange} />
+      <Button />
     </form>
   );
 };
