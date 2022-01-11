@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { HandleChangeContext, NewTodosContext } from "../App";
+import { HandleChangeContext, NewTodosContext } from "./Context";
 
 const Input = () => {
   const newTodo = useContext(NewTodosContext);

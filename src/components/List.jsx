@@ -4,7 +4,7 @@ import {
   IsOpenContext,
   TodosContext,
   TogglePopupContext,
-} from "../App";
+} from "./Context";
 import TogglePopup from "./TogglePopup";
 
 const List = () => {

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { HandleChangeContext, HandleSubmitContext } from "../App";
+import { HandleChangeContext, HandleSubmitContext } from "./Context";
 import Button from "./Button";
 import Input from "./Input";
 

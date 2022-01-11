@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { TogglePopupContext } from "../App";
+import { TogglePopupContext } from "./Context";
 
 const Popup = ({ children }) => {
   const togglePopup = useContext(TogglePopupContext);

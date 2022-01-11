@@ -1,22 +1,18 @@
 import "./App.css";
 import React, { useState } from "react";
 import ToDoBox from "./components/ToDoBox";
-
-// Contexts For States
-
-export const TodosContext = React.createContext();
-export const NewTodosContext = React.createContext();
-export const IsOpenContext = React.createContext();
-export const TodoIdContext = React.createContext();
-
-// Context For Handlers
-
-export const HandleChangeContext = React.createContext();
-export const HandleSubmitContext = React.createContext();
-export const HandleDeleteClickContext = React.createContext();
-export const HandleEditClickContext = React.createContext();
-export const HandleEditChangeContext = React.createContext();
-export const TogglePopupContext = React.createContext();
+import {
+  TodosContext,
+  NewTodosContext,
+  IsOpenContext,
+  TodoIdContext,
+  HandleChangeContext,
+  HandleSubmitContext,
+  HandleDeleteClickContext,
+  HandleEditClickContext,
+  HandleEditChangeContext,
+  TogglePopupContext,
+} from "./components/Context";
 
 function App() {
   const todosArray = [

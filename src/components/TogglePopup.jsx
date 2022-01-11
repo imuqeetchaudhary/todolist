@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { HandleEditClickContext, HandleEditChangeContext } from "../App";
+import { HandleEditClickContext, HandleEditChangeContext } from "./Context";
 import Popup from "./Popup";
 
 const TogglePopup = () => {
