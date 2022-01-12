@@ -5,7 +5,7 @@ import {
   TodosContext,
   NewTodosContext,
   IsOpenContext,
-  TodoIdContext,
+  SelectedTodoContext,
   HandleChangeContext,
   HandleSubmitContext,
   HandleDeleteClickContext,
@@ -35,8 +35,7 @@ function App() {
   const [todos, setTodos] = useState(todosArray);
   const [newTodo, setNewTodo] = useState({ id: null, title: "" });
   const [isOpen, setIsOpen] = useState(false);
-  const [todoId, setTodoId] = useState(null);
-  const [editTodo, setEditTodo] = useState({ id: null, title: "" });
+  const [selectedTodo, setSelectedTodo] = useState({ id: null, title: "" });
 
   // Handler Functions
 
@@ -60,15 +59,18 @@ function App() {
 
   const togglePopup = (e) => {
     setIsOpen(!isOpen);
-    setTodoId(+e.target.parentNode.firstChild.id);
+    setSelectedTodo({
+      id: +e.target.parentNode.firstChild.id,
+      title: e.target.previousSibling.innerText,
+    });
   };
 
   const handleEditClick = (e) => {
     const newArray = todos;
 
     newArray.forEach((todo) => {
-      if (todo.id === todoId) {
-        todo.title = editTodo.title;
+      if (todo.id === selectedTodo.id) {
+        todo.title = selectedTodo.title;
       }
     });
 
@@ -77,7 +79,7 @@ function App() {
   };
 
   const handleEditChange = (e) => {
-    setEditTodo({ id: todoId, title: e.target.value });
+    setSelectedTodo({ id: selectedTodo.id, title: e.target.value });
   };
 
   return (
@@ -85,7 +87,7 @@ function App() {
       <TodosContext.Provider value={todos}>
         <NewTodosContext.Provider value={newTodo}>
           <IsOpenContext.Provider value={isOpen}>
-            <TodoIdContext.Provider value={todoId}>
+            <SelectedTodoContext.Provider value={selectedTodo}>
               <HandleChangeContext.Provider value={handleChange}>
                 <HandleSubmitContext.Provider value={handleSubmit}>
                   <HandleDeleteClickContext.Provider value={handleDeleteClick}>
@@ -101,7 +103,7 @@ function App() {
                   </HandleDeleteClickContext.Provider>
                 </HandleSubmitContext.Provider>
               </HandleChangeContext.Provider>
-            </TodoIdContext.Provider>
+            </SelectedTodoContext.Provider>
           </IsOpenContext.Provider>
         </NewTodosContext.Provider>
       </TodosContext.Provider>

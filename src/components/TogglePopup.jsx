@@ -1,10 +1,15 @@
 import React, { useContext, useEffect, useRef } from "react";
-import { HandleEditClickContext, HandleEditChangeContext } from "./Context";
+import {
+  HandleEditClickContext,
+  HandleEditChangeContext,
+  SelectedTodoContext,
+} from "./Context";
 import Popup from "./Popup";
 
 const TogglePopup = () => {
   const handleEditClick = useContext(HandleEditClickContext);
   const handleEditChange = useContext(HandleEditChangeContext);
+  const selectedTodo = useContext(SelectedTodoContext);
 
   const inputRef = useRef();
 
@@ -19,6 +24,7 @@ const TogglePopup = () => {
           <input
             type="text"
             placeholder="Updated Todo Name Here"
+            value={selectedTodo.title}
             onChange={handleEditChange}
             ref={inputRef}
           />
