@@ -59,10 +59,12 @@ function App() {
 
   const togglePopup = (e) => {
     setIsOpen(!isOpen);
-    setSelectedTodo({
-      id: +e.target.parentNode.firstChild.id,
-      title: e.target.previousSibling.innerText,
-    });
+    if (!isOpen) {
+      setSelectedTodo({
+        id: +e.target.parentNode.firstChild.id,
+        title: e.target.previousSibling.innerText,
+      });
+    }
   };
 
   const handleEditClick = (e) => {
